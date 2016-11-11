@@ -4,7 +4,14 @@
   "description": "Demo app for the class Dev Ops for Frontend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "clean": "gulp clean",
+      "scripts": "gulp scripts",
+      "styles": "gulp styles",
+      "build": "gulp build",
+      "deploy": "gulp deploy",
+      "start": "gulp build && forever stopall && forever start app.js >> log/app.out",
+      "stop": "forever stopall"
   },
   "repository": {
     "type": "git",
@@ -19,6 +26,7 @@
   "dependencies": {
     "eslint": "^3.1.1",
     "express": "^4.14.0",
+    "forever": "^0.15.3",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.11",
     "gulp-concat": "^2.6.0",
