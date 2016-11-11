@@ -1,12 +1,10 @@
- const express = require("express");
- const app = express();
+const express = require("express");
+const app = express();
  
-const DIST_FOLDER = '/dist';
-
-app.use('/static', express.static(__dirname + DIST_FOLDER)); 
+app.use(express.static('dist')); 
 
 app.get("/", function(req, res) {
-    res.sendFile( __dirname + DIST_FOLDER + '/index.html');
+    res.sendFile( __dirname + '/dist/index.html');
 });
  
 const port = 3001;
